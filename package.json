@@ -17,6 +17,7 @@
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.5.2",
+    "obseriot": "^0.3.7",
     "riot": "^3.4.2",
     "riot-route": "^3.1.1",
     "riot-tag-loader": "^1.0.0",
