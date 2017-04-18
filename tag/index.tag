@@ -4,8 +4,18 @@
 
 
     <script>
+        import { install } from 'businessman'
+        install( '../build/worker-build.js' )
+        import { getState } from 'businessman'
+
         self = this;
         let count = 0;
+
+
+        getState( 'counter' )
+        .then( ( state ) => {
+            console.log( state )
+        } );
 
         show_count() {
             count += 1;

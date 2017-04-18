@@ -14,6 +14,7 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015-riot": "^1.1.0",
+    "businessman": "^2.0.1",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.5.2",

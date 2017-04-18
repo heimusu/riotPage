@@ -3,6 +3,8 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = [
+
+    // app.js
    {
       // 対象のjsファイル
       entry: './app/app.js',
@@ -36,7 +38,47 @@ module.exports = [
          new webpack.optimize.OccurenceOrderPlugin(),
          new webpack.ProvidePlugin({ riot: 'riot' })
       ]
-  },{
+  },
+
+
+  // store
+  {
+     // 対象のjsファイル
+     entry: './worker/worker.js',
+     output: {
+        path: __dirname + '/build/',
+        filename: 'worker-build.js'
+     },
+     module: {
+        preLoaders: [
+           {
+              test: /\.tag$/,
+              exclude: /node_modules/,
+              loader: 'riot-tag-loader'
+           }
+        ],
+        loaders: [
+           {
+              test: /\.js|\.tag$/,
+              exclude: /node_modules/,
+              loader : 'babel-loader',
+              query  : {
+                 presets: ['es2015-riot']
+              }
+           }
+        ]
+     },
+     resolve: {
+        extensions: ['', '.js', '.tag']
+     },
+     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.ProvidePlugin({ riot: 'riot' })
+     ]
+  },
+
+  // Sass
+  {
       context: path.join(__dirname, 'scss'),
       entry: {
           style: './index.scss'
