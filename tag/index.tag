@@ -6,7 +6,7 @@
     <script>
         import { install } from 'businessman'
         install( '../build/worker-build.js' )
-        import { getState } from 'businessman'
+        import { getState, dispatch, subscribe } from 'businessman'
 
         self = this;
         let count = 0;
@@ -14,13 +14,19 @@
 
         getState( 'counter' )
         .then( ( state ) => {
-            console.log( state )
+            // console.log( state )
         } );
+
+        subscribe('counter', (state, mutationType) => {
+            // console.log(state);
+            count = state;
+        });
 
         show_count() {
             count += 1;
+            dispatch('counter', 'increment', 1);
             self.result = `count: ${count}`;
-            console.log(count);
+            // console.log(count);
         }
     </script>
 

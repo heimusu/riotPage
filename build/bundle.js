@@ -2837,8 +2837,19 @@
 
 	'use strict';
 
+	var _businessman = __webpack_require__(5);
+
 	var riot = __webpack_require__(1);
-	riot.tag2('another', '<h1>another</h1>', '', '', function (opts) {});
+
+	riot.tag2('another', '<h1>another</h1>', '', '', function (opts) {
+	    (0, _businessman.install)('../build/worker-build.js');
+
+	    (0, _businessman.dispatch)('counter', 'increment', 1);
+	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
+	        console.log('hit');
+	        console.log(state);
+	    });
+	});
 
 /***/ }),
 /* 3 */
@@ -2865,14 +2876,17 @@
 	    self = this;
 	    var count = 0;
 
-	    (0, _businessman.getState)('counter').then(function (state) {
-	        console.log(state);
+	    (0, _businessman.getState)('counter').then(function (state) {});
+
+	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
+
+	        count = state;
 	    });
 
 	    this.show_count = function () {
 	        count += 1;
+	        (0, _businessman.dispatch)('counter', 'increment', 1);
 	        self.result = 'count: ' + count;
-	        console.log(count);
 	    }.bind(this);
 	});
 
