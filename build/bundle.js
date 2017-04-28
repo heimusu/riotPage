@@ -3198,11 +3198,16 @@
 
 	var riot = __webpack_require__(1);
 
-	riot.tag2('another', '<h1>another</h1>', '', '', function (opts) {
+	riot.tag2('another', '<h1>another</h1> <h2>{count}</h2>', '', '', function (opts) {
+
+	    var self = this;
+	    this.count = 0;
 
 	    (0, _businessman.getState)('counter').then(function (state) {
 	        console.log(state);
 	        console.log('getstate');
+	        self.count = state;
+	        self.update();
 	    });
 	});
 
@@ -3235,7 +3240,10 @@
 	    self = this;
 	    var count = 0;
 
-	    (0, _businessman.getState)('counter').then(function (state) {});
+	    (0, _businessman.getState)('counter').then(function (state) {
+
+	        count = state;
+	    });
 
 	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
 

@@ -13,6 +13,7 @@
         getState( 'counter' )
         .then( ( state ) => {
             // console.log( state )
+            count = state;
         } );
 
         subscribe('counter', (state, mutationType) => {
