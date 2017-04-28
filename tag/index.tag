@@ -4,9 +4,7 @@
 
 
     <script>
-        import { install } from 'businessman'
-        install( '../build/worker-build.js' )
-        import { getState, dispatch, subscribe } from 'businessman'
+        import { getState, dispatch, subscribe } from 'businessman';
 
         self = this;
         let count = 0;

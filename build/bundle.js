@@ -54,11 +54,11 @@
 
 	var _riotRoute2 = _interopRequireDefault(_riotRoute);
 
-	__webpack_require__(3);
-
 	__webpack_require__(4);
 
-	__webpack_require__(2);
+	__webpack_require__(5);
+
+	__webpack_require__(3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2835,65 +2835,6 @@
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	var _businessman = __webpack_require__(5);
-
-	var riot = __webpack_require__(1);
-
-	riot.tag2('another', '<h1>another</h1>', '', '', function (opts) {
-	    (0, _businessman.install)('../build/worker-build.js');
-
-	    (0, _businessman.dispatch)('counter', 'increment', 1);
-	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
-	        console.log('hit');
-	        console.log(state);
-	    });
-	});
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var riot = __webpack_require__(1);
-	riot.tag2('app', '<div id="app"></div>', '', '', function (opts) {});
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _businessman = __webpack_require__(5);
-
-	var riot = __webpack_require__(1);
-
-	riot.tag2('index', '<button onclick="{show_count}">click</button> <p show="{result}">{result}</p>', 'index button,[data-is="index"] button{ font-size: 200%; }', '', function (opts) {
-	    (0, _businessman.install)('../build/worker-build.js');
-
-	    self = this;
-	    var count = 0;
-
-	    (0, _businessman.getState)('counter').then(function (state) {});
-
-	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
-
-	        count = state;
-	    });
-
-	    this.show_count = function () {
-	        count += 1;
-	        (0, _businessman.dispatch)('counter', 'increment', 1);
-	        self.result = 'count: ' + count;
-	    }.bind(this);
-	});
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	(function (global, factory) {
 	     true ? factory(exports) :
 	    typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -3246,6 +3187,67 @@
 
 	})));
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _businessman = __webpack_require__(2);
+
+	var riot = __webpack_require__(1);
+
+	riot.tag2('another', '<h1>another</h1>', '', '', function (opts) {
+
+	    (0, _businessman.getState)('counter').then(function (state) {
+	        console.log(state);
+	        console.log('getstate');
+	    });
+	});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _businessman = __webpack_require__(2);
+
+	var riot = __webpack_require__(1);
+
+	riot.tag2('app', '<div id="app"></div>', '', '', function (opts) {
+	    (0, _businessman.install)('../build/worker-build.js');
+	});
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _businessman = __webpack_require__(2);
+
+	var riot = __webpack_require__(1);
+
+	riot.tag2('index', '<button onclick="{show_count}">click</button> <p show="{result}">{result}</p>', 'index button,[data-is="index"] button{ font-size: 200%; }', '', function (opts) {
+
+	    self = this;
+	    var count = 0;
+
+	    (0, _businessman.getState)('counter').then(function (state) {});
+
+	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
+
+	        count = state;
+	    });
+
+	    this.show_count = function () {
+	        count += 1;
+	        (0, _businessman.dispatch)('counter', 'increment', 1);
+	        self.result = 'count: ' + count;
+	    }.bind(this);
+	});
 
 /***/ }),
 /* 6 */
