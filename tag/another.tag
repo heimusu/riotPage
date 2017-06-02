@@ -1,7 +1,7 @@
 <another>
     <h1>another</h1>
     <h2>{count}</h2>
-
+    <a href="/">back to top</a>
     <script>
         import { getState, dispatch, subscribe } from 'businessman'
 

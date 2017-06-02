@@ -15,7 +15,9 @@
         .then( ( state ) => {
             // console.log( state )
             count = state;
-        } );
+            self.result = `count: ${count}`;
+            self.update();
+        });
 
         subscribe('counter', (state, mutationType) => {
             // console.log(state);

@@ -3198,7 +3198,7 @@
 
 	var riot = __webpack_require__(1);
 
-	riot.tag2('another', '<h1>another</h1> <h2>{count}</h2>', '', '', function (opts) {
+	riot.tag2('another', '<h1>another</h1> <h2>{count}</h2> <a href="/">back to top</a>', '', '', function (opts) {
 
 	    var self = this;
 	    this.count = 0;
@@ -3243,6 +3243,8 @@
 	    (0, _businessman.getState)('counter').then(function (state) {
 
 	        count = state;
+	        self.result = 'count: ' + count;
+	        self.update();
 	    });
 
 	    (0, _businessman.subscribe)('counter', function (state, mutationType) {
