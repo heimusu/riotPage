@@ -1,6 +1,7 @@
 <index>
     <button onclick="{ show_count }">click</button>
     <p show="{ result }">{ result }</p>
+    <a href="/another">link to another</a>
 
 
     <script>

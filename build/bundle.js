@@ -62,7 +62,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// route.base('/');
+	_riotRoute2.default.base('/');
 
 	_riot2.default.mount('app');
 
@@ -3235,7 +3235,7 @@
 
 	var riot = __webpack_require__(1);
 
-	riot.tag2('index', '<button onclick="{show_count}">click</button> <p show="{result}">{result}</p>', 'index button,[data-is="index"] button{ font-size: 200%; }', '', function (opts) {
+	riot.tag2('index', '<button onclick="{show_count}">click</button> <p show="{result}">{result}</p> <a href="/another">link to another</a>', 'index button,[data-is="index"] button{ font-size: 200%; }', '', function (opts) {
 
 	    self = this;
 	    var count = 0;

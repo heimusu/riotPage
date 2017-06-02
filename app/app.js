@@ -5,7 +5,7 @@ import '../tag/app.tag';
 import '../tag/index.tag';
 import '../tag/another.tag';
 
-// route.base('/');
+route.base('/');
 
 riot.mount('app');
 
