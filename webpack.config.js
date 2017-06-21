@@ -12,6 +12,11 @@ module.exports = [
          path: __dirname + '/build/',
          filename: 'bundle.js'
       },
+      devServer: {
+        // contentBase: 'dist'
+        hot: true,
+        historyApiFallback: true,
+      },
       module: {
          preLoaders: [
             {
