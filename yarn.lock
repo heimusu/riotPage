@@ -3090,9 +3090,15 @@ riot-cli@^3.0.2:
     rollup "^0.41.6"
     shelljs "^0.7.7"
 
-riot-compiler@^3.0.0, riot-compiler@^3.2.1, riot-compiler@^3.2.3:
+riot-compiler@^3.0.0, riot-compiler@^3.2.1:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/riot-compiler/-/riot-compiler-3.2.3.tgz#db3cf1e920cd313f19eeac4f0c5314fc21db6314"
+
+riot-compiler@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/riot-compiler/-/riot-compiler-3.2.4.tgz#e0b88bcf1dfe918d1f5aaaea826f568f2ef49421"
+  dependencies:
+    skip-regex "^0.2.0"
 
 riot-observable@3.0.0, riot-observable@^3.0.0:
   version "3.0.0"
@@ -3116,12 +3122,12 @@ riot-tmpl@^3.0.8:
   dependencies:
     eslint-config-riot "^1.0.0"
 
-riot@^3.5.1:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/riot/-/riot-3.6.0.tgz#036706d43b401c4988488f8a5cafd189669441be"
+riot@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-3.6.1.tgz#b802eb95ca5ba21919e4793677e318a11c285d36"
   dependencies:
     riot-cli "^3.0.2"
-    riot-compiler "^3.2.3"
+    riot-compiler "^3.2.4"
     riot-observable "^3.0.0"
     riot-tmpl "^3.0.8"
     simple-dom "0.3.2"
@@ -3273,6 +3279,10 @@ simple-dom@0.3.2:
 simple-html-tokenizer@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.4.1.tgz#028988bb7fe8b2e6645676d82052587d440b02d3"
+
+skip-regex@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/skip-regex/-/skip-regex-0.2.0.tgz#e256cba1eb98b78a46574f9461ae931a691bac6e"
 
 slash@^1.0.0:
   version "1.0.0"
